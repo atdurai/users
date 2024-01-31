@@ -2,12 +2,12 @@ import { Request, Response } from 'express'
 import Users from '../adapter/user'
 
 export const createUser = async (req: Request, res: Response) => {
-  const { id, email, registration_attibution, email_verified } = req.body
+  const { id, email, registration_attribution, email_verified } = req.body
   try {
     const user = await Users.create({
       id,
       email,
-      registration_attibution,
+      registration_attribution,
       email_verified: email_verified ?? false,
     })
     res.status(201).json(user)
