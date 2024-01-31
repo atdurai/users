@@ -8,7 +8,7 @@ const app = express()
 const PORT = process.env.PORT || 3000
 
 app.use(express.json())
-app.use('/user', UserRoute)
+app.use('/v1/users', UserRoute)
 
 app.listen(PORT, async () => {
   await InitDB()
