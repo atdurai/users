@@ -4,7 +4,7 @@ import { sequelize } from './db'
 interface User {
   id: string
   email: string
-  registration_attibution?: string
+  registration_attribution?: string
   email_verified: boolean
   metadata?: Metadata
   nickname?: string
@@ -26,7 +26,7 @@ interface Metadata {
 class Users extends Model<User> implements User {
   public id!: string
   public email!: string
-  public registration_attibution: string | undefined
+  public registration_attribution: string | undefined
   public email_verified!: boolean
   public metadata: Metadata | undefined
   public nickname: string | undefined
@@ -46,7 +46,7 @@ Users.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    registration_attibution: {
+    registration_attribution: {
       type: DataTypes.STRING,
       allowNull: true,
     },
